@@ -1,0 +1,27 @@
+print("Bienvenido al Sistema ConcejoNET")
+Usuario_Correcto ="117882"
+Contraseña_Correcta="288711"
+intentos_permitidos = 3
+
+
+
+while intentos_permitidos > 0:
+    Usuario = input("Ingrese su Usuario: ")
+
+    if Usuario == Usuario_Correcto:
+        Contraseña = input("Ingrese su Contraseña: ")
+
+        if Contraseña == Contraseña_Correcta:
+            print("Bienvenido, busque su punto de conexión")
+            break
+        else:
+            print("ERROR, Contraseña incorrecta. Inténtelo de nuevo.")
+            intentos_permitidos -= 1
+            print(f"Le quedan {intentos_permitidos} intentos.")
+    else:
+        print("ERROR, Usuario incorrecto. Inténtelo de nuevo.")
+        intentos_permitidos -= 1
+        print(f"Le quedan {intentos_permitidos} intentos.")
+
+if intentos_permitidos == 0:
+    print("Acceso denegado. Demasiados intentos fallidos.")
